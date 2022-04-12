@@ -2,7 +2,37 @@ DAX:
 
 Calculated Columns vs Measure
 
-//Arrive By = 
-       SWWITCH([Shipping Method],
-       "Standard", Orders[Order Date] + 5,
-       "2 Day", DATEADD(Orders[Order Date] + 2, DAY)
+https://tinyurl.com/pbi-mfs
+
+
+https://app.powerbi.com/view?r=eyJrIjoiY2JiOTc3YTUtZmQxYy00MDgwLTk2OGEtZWJhYTJiZTg1MmYyIiwidCI6IjQwYTE4MDdjLTk1OWEtNDJlOS05NjMwLTRjMzc5OThhMmE1MiJ9
+
+
+Arrive By = 
+    SWITCH([Shipping Method],
+    "Standard", Orders[Order Date] + 5,
+    "2 Day", Orders[Order Date] + 2,
+    "Next Day", Orders[Order Date] + 1,
+    "First Class",  Orders[Order Date]
+    )
+    
+    
+Late = IF(Orders[Arrive By] < Orders[Ship Date], "Late", "On time")
+
+
+Order Date (Pacific Time) = Orders[Order Date] - TIME(3, 0, 0)
+
+
+Overall Sales = 
+    CALCULATE(
+        SUM(Orders[Sales]),
+        REMOVEFILTERS(Orders)
+    )
+
+       
+       
+Current % of Sales Total = SUM(Orders[Sales]) / Orders[Overall Sales]
+
+//Comments
+
+
