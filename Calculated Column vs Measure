@@ -1,0 +1,8 @@
+DAX:
+
+Calculated Columns vs Measure
+
+//Arrive By = 
+       SWWITCH([Shipping Method],
+       "Standard", Orders[Order Date] + 5,
+       "2 Day", DATEADD(Orders[Order Date] + 2, DAY)
