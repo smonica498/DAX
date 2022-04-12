@@ -35,4 +35,29 @@ Current % of Sales Total = SUM(Orders[Sales]) / Orders[Overall Sales]
 
 //Comments
 
+2021 Sales = 
+    CALCULATE(
+        SUM(Orders[Sales]),
+        YEAR(Orders[Order Date]) = 2021
+    )
 
+
+Calculated Column:
+Dates = CALENDARAUTO()
+Fiscal Quarters = 
+ IF(WEEKNUM([Date], 1) <= 13, "Q1")
+ IF(WEEKNUM([Date], 1) <= 26, "Q2")
+ IF(WEEKNUM([Date], 1) <= 39, "Q3")
+ "Q4")))
+ 
+ //For custom Fiscal Calendar
+ 
+ Fiscal Calendar
+ 
+ Fiscal Quarters = //Convert to whole numbers
+   var FYStart
+ IF([Date] - DATE(2018, 4, 2)) * 7 <= 13, "Q1"
+ 
+ //Convert to Text
+ 
+ 
