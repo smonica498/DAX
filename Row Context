@@ -1,0 +1,42 @@
+Row Context
+o Defined by
+• Calculated column definition
+• Defined automatically for each row
+• Row Iteration functions
+• SUMX, AVERAGEX …
+• All «X» functions and iterators
+• Defined by the user formulas
+o Needed to evaluate column values, it is the concept of
+“current row”
+
+SUMX ( Orders, [Quantity]*[Price] )
+
+There Are Always Two Contexts
+o Filter context
+• Filters tables
+• Might be empty
+• All the tables are visible
+• But this never happens in the real world
+o Row context
+• Iterates rows
+• For the rows active in the filter context
+• Might be empty
+• There is no iteration running
+o Both are «evaluation contexts»
+
+
+Filtering a Table
+SUMX (
+FILTER (
+Orders,
+Orders[Price] > 1
+),
+Orders[Quantity] * Orders[Price]
+)
+
+
+Removing Filters
+SUMX (
+ALL ( Orders ),
+Orders[Quantity] * Orders[Price]
+)
