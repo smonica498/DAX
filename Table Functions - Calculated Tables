@@ -1,0 +1,30 @@
+Table Functions:
+
+o Basic functions that work on full tables:
+
+• FILTER
+• ALL
+• VALUES
+• DISTINCT
+• RELATEDTABLE
+
+o Their result is often used in other functions
+
+o They can be combined together to form complex
+expressions
+
+o We will discover many other table functions later in the
+course
+
+
+
+CALCULATED TABLES:
+
+o In the newest versions of Tabular (and in Power BI
+Desktop), you can create calculated tables
+o User interface is different in different products
+
+Copy of Product = 'Product'
+
+Table Name = 'Table'
+
