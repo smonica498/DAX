@@ -1,0 +1,25 @@
+Filtering a Table:
+
+SUMX (
+  FILTER (
+    Orders,
+    Orders[Price] > 1
+  ),
+Orders[Quantity] * Orders[Price]
+)
+
+Example:
+
+Copy of Product Table when Color is Red = FILTER ( 'Product', 'Product'[Color] = 'Red')
+
+Example:
+
+Red Sales = 
+SUMX (
+  FILTER ( 
+  Sales, 
+  RELATED ('Product['Color] ) = "Red"
+  ),
+  Sales[Quantity] * Sales[Net price]
+)
+
