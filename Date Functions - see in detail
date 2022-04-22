@@ -1,0 +1,11 @@
+Date Functions:
+
+o Many useful functions
+• DATE, DATEVALUE, DAY, EDATE,
+• EOMONTH, HOUR, MINUTE,
+• MONTH, NOW, SECOND, TIME,
+• TIMEVALUE, TODAY, WEEKDAY,
+• WEEKNUM, YEAR, YEARFRAC
+
+o Time Intelligence functions will be covered later
+
