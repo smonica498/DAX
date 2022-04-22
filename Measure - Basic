@@ -1,0 +1,32 @@
+Measure:
+
+Line Margin = Quantity * (Net Price - Unit Cost)
+
+For Calculated Column:
+Data Model -> Add Column
+
+Line Margin = Sales[Quantity] * (Sales[Net Price] - Sales[Unit Cost])
+Line Margin % = Sales[Line Margin]/Sales[Line Amount]
+
+To convert or format Line Margin into % => Clikc on that Column -> Modelling tab -> Under Formatting -> Click on %
+
+But it would be wrong
+
+Measures:
+wont calculate Line by line but on aggregate level
+
+For Mesures:
+Viz View, Modeling tab -> New Measure
+
+Margin % = SUM( SUM(Sales[Line Margin]) / SUM([Sales[Line Amount]]))
+Format as %
+
+Measures do not belong to a table
+- Avoid table name
+- [Margin %] instead of Sales[Margin %]
+- Easier to move to another table
+- Easier to identify as a measure
+
+Thus,
+- Calcualted columns -> Table[Column]
+- Measures -> [Measures]
