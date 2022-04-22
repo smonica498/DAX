@@ -1,3 +1,20 @@
+Measure vs Calculated Column:
+
+Use a column when:
+- Need to slice or filter on the value
+
+Use a measure:
+- Calculated percentages
+- Calculate ratios
+- Need complex aggregations
+
+Space and CPU usage:
+- Columsn consume memory
+- Measures consume CPU
+
+
+
+
 DAX:
 
 Calculated Columns vs Measure
