@@ -1,0 +1,3 @@
+Calculated Columns:
+
+= IF ( ISBLANK ( (Customer[Birth Date) ), BLANK(), YEAR ( TODAY() ) - YEAR (Customer[Birth Date) )
