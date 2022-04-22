@@ -1,0 +1,20 @@
+Using Variables
+Very useful to avoid repeating subexpressions in your code
+
+VAR
+  TotalQuantity = SUM ( Sales[Quantity] )
+  
+RETURN
+  IF (
+     TotalQuantity > 1000,
+     TotalQuantity * 0.95,
+     TotalQuantity * 1.25
+  )
+  
+  
+Example: Note Variable name cannot have space (xy is a symbol for VAR name and it is in Green highlight)
+
+Margin % =
+VAR Margin = SUM ( Sales[Sales[Line Margin] )
+VAR SalesAmount = SUMX ( Sales, Sales[Net Price] * Sales[Quantity] )
+RETURN Margin / SalesAmount
