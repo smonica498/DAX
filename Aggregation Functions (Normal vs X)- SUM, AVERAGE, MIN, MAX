@@ -1,0 +1,37 @@
+Aggregation Functions:
+
+Useful to aggreagte values:
+- SUM
+- AVERAGE
+- MIN
+- MAX
+
+Work only on numeric column
+
+Aggregate only one column:
+SUM ( Odrders[Price] ) : can do
+SUM ( Odrders[Price] * Orders[Quantity] ) : cannot do
+
+
+
+The «X» Aggregation Functions
+o Iterators: useful to aggregate formulas
+• SUMX
+• AVERAGEX
+• MINX
+• MAXX
+o Iterate over the table and evaluate the expression for
+each row
+o Always receive two parameters
+• Table to iterate
+• Formula to evaluate for each row
+
+Example of SUMX
+For each row in the Sales table, evaluates the formula, then sum up all the results
+Inside the formula, there is a «current row»
+SUMX (
+Sales,
+Sales[Price] * Sales[Quantity]
+)
+
+SUMX(Table, Expression)
