@@ -1,0 +1,35 @@
+RELATEDTABLE
+Returns a table with all the rows related with the current one.
+NumOfProducts =
+COUNTROWS (
+RELATEDTABLE ( Product )
+)
+
+Example of RELATEDTABLE
+Compute the number of red products for a category. Build a calculated column in the
+Categories table:
+NumOfRedProducts =
+COUNTROWS (
+FILTER (
+RELATEDTABLE ( Product ),
+Product[Color] = "Red"
+)
+)
+
+
+Example,
+Calculated column
+Number of Sales =
+  COUNTROWS(
+    RELATEDTABLE(Sales)
+  )
+  
+  
+  
+Example:
+Calculated column
+Sales of Customer =
+  SUMX(
+    RELATEDTABLE(Sales),
+    Sales[Quantity] * Sales[Net Price
+  )
