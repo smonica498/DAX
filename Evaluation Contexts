@@ -1,0 +1,12 @@
+Evaluation Contexts:
+
+What is an Evaluation Context?
+TotalSales := SUM ( Sales[SalesAmount] )
+Numbers are sliced by color, i.e.
+the formula is NOT computing
+sum of sales, it is computing it
+for only a subset of the data
+model
+The value of a formula
+depends on its context
+
