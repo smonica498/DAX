@@ -1,0 +1,26 @@
+DISTINCT:
+
+Returns the distinct values of a column, only the ones visible in the current context
+
+NumOfProducts :=
+
+COUNTROWS (
+DISTINCT ( Product[ProductCode] )
+)
+
+Example:
+Copy of Product Table with only Color column = DISTINCT('Product'[Color])
+
+Example: All ignores filter and gives the grand total
+
+Number of All Products that have been sold at some point = COUNTROWS(ALL (Sales[ProductKey]))
+
+Example:
+
+Products Sold for distinct sales productkey = 
+  COUNTROWS(
+    DISTINCT(
+    Sales[ProductKey]
+    )
+  )
+
