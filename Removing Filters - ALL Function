@@ -1,0 +1,31 @@
+The ALL Function
+o ALL
+• Returns all the rows of a table
+• Ignores the filter context
+• Returns a table
+• That can be iterated by an «X» function
+o Needs a table as input
+o Can be used with a single column
+• ALL ( Customers[CustomerName] ) - This returns all of the Table
+• The result contains a table with one column
+
+Removing Filters
+SUMX (
+  ALL ( Orders ),
+  Orders[Quantity] * Orders[Price]
+)
+
+Example:
+# This shows the Grand total (just shows the same number computing eeverything)
+All Sales Amount =
+ SUMX(
+  ALL (Sales),
+  Sales[Quantity] * Sales[Net Price]
+  )
+  
+  
+Sales % = [Sales Amount] / [All Sales Amount]
+
+Example:
+
+Copy of Table with only Color column = ALL ('Product'[Color]')
