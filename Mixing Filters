@@ -1,0 +1,16 @@
+Mixing Filters
+o Table functions can be mixed
+o Each one requires a table
+o Each one returns a table
+o FILTER ( ALL ( Table ), Condition )
+• Puts a filter over the entire table
+• Ignores the current filter context
+
+
+Mixing Filters: Filter from ALL Orders and then filter for only channel = internet
+SUMX (
+FILTER (
+ALL( Orders ),
+Orders[Channel]="Internet"
+),
+Orders[Quantity] * Orders[Price]
