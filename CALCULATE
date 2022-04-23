@@ -1,0 +1,42 @@
+CALCULATE Syntax
+Filters are evaluated in the outer filter context, then combined together in AND and finally
+used to build a new filter context into which DAX evaluates the expression
+CALCULATE (
+Expression,
+Filter1,
+…
+Filtern
+)
+# Repeated many times, as needed
+
+Example:
+
+NumOfBigSales =
+  CALCULATE(
+    SUM( Sales[SalesAmount]),
+    Sales[SalesAmount] > 100
+    )
+    
+    
+Example:
+
+Red Sales CALCULATE =
+  CALCULATE(
+  [Sales Amount],
+  'Product'[Color] = "Red"
+  )
+  
+
+  
+CALCULATE Examples
+Compute the sum of sales where the price is more than $100.00
+NumOfBigSales :=
+CALCULATE (
+SUM ( Sales[SalesAmount] ),
+Sales[SalesAmount] > 100
+)
+Filter and SUM are
+on the same table.
+You can obtain the same
+result using FILTER
+
